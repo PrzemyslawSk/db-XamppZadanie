@@ -1,6 +1,7 @@
 package pl.edu.wszib.CUI;
 
 import pl.edu.wszib.db.DBConnector;
+
 import pl.edu.wszib.model.Product;
 
 import java.util.Scanner;
@@ -9,9 +10,26 @@ import java.util.Scanner;
 public class UserInterface
 {
     Scanner scanner = new Scanner(System.in);
+    private int i;
+    private int id;
+    private int idMax = 1;
+
+
 
     public void ShowInterface()
     {
+
+        if(i == 0) {
+
+            for (DBConnector.getProduct(i++); DBConnector.getProduct(i) != null; ) {
+                i = id + 1;
+                id = i;
+                if(idMax<i)
+                idMax=i;
+            }
+        }
+        System.out.println(id);
+
         System.out.println("Choose your option:");
         System.out.println("1. Show product list.");
         System.out.println("2. Add product.");
@@ -19,20 +37,22 @@ public class UserInterface
         System.out.println("4. Exit program.");
         String variable = scanner.nextLine();
 
+
+
         switch (variable)
         {
             //  Show product list.
             case "1":
-                int i = 0;
+                i = 0;
                 try {
                     System.out.println("==== Product List ==== ");
-                    while (true) {
+                    for (DBConnector.getProduct(i); i < idMax; ) {
                         Product productFromDb = DBConnector.getProduct(i);
-                        if(productFromDb == null)
-                            break;
-                        System.out.println(productFromDb);
-                        i++;
+
+                            System.out.println(productFromDb);
+                            i++;
                     }
+
                 }catch (java.util.InputMismatchException e)
                 {
                     System.out.println("Something went wrong: " + e.toString());
@@ -41,19 +61,54 @@ public class UserInterface
                 break;
             //  Add product.
             case "2":
+                i=0;
+                Product productFromDb = DBConnector.getProduct(i);
                 try {
-                    Product product = new Product();
-                    System.out.println("Set product ID: ");
-                    product.setProductID(scanner.nextInt());
-                    System.out.println("Set product name: ");
-                    product.setProductName(scanner.next());
-                    System.out.println("Set product category: ");
-                    product.setProductCategory(scanner.next());
-                    System.out.println("Set product price: ");
-                    product.setProductPrice(scanner.nextDouble());
-                    scanner.nextLine();
+                    if (productFromDb == null) {
 
-                    DBConnector.addProduct(product);
+                        Product product = new Product();
+                        product.setProductID(i);
+
+                        System.out.println("Set product name: ");
+                        product.setProductName(scanner.next());
+                        System.out.println("Set product category: ");
+                        product.setProductCategory(scanner.next());
+                        System.out.println("Set product price: ");
+                        product.setProductPrice(scanner.nextDouble());
+                        scanner.nextLine();
+
+                        DBConnector.addProduct(product);
+                        i++;
+                    }else {
+
+                        //Calibration ID
+
+                        if(i == 0) {
+                            for (DBConnector.getProduct(i++); DBConnector.getProduct(i) != null; ) {
+                                i = i + 1;
+                                id = i;
+
+                            }
+                        }
+
+                        Product product = new Product();
+                        product.setProductID((i));
+
+
+                        System.out.println("Set product name: ");
+                        product.setProductName(scanner.next());
+                        System.out.println("Set product category: ");
+                        product.setProductCategory(scanner.next());
+                        System.out.println("Set product price: ");
+                        product.setProductPrice(scanner.nextDouble());
+                        scanner.nextLine();
+
+
+                        DBConnector.addProduct(product);
+
+                    }
+                    if(idMax<=i)
+                        idMax = i+1;
                 }catch (java.util.InputMismatchException e)
                 {
                     System.out.println("Something went wrong: " + e.toString());
@@ -69,6 +124,7 @@ public class UserInterface
                     scanner.nextLine();
 
                     DBConnector.deleteProduct(product);
+
                 }catch (java.util.InputMismatchException e)
                 {
                     System.out.println("Something went wrong: " + e.toString());
@@ -85,5 +141,6 @@ public class UserInterface
                 System.out.println("=======================================");
                 break;
         }
+
     }
 }
