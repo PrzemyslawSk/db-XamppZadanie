@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import pl.edu.wszib.dao.IProductDAO;
 import pl.edu.wszib.model.Product;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -39,13 +40,23 @@ public class ProductDAOImpl implements IProductDAO {
         return product;
     }
 
+    public List<Product> getAllProducts() {
+        Session session = factory.openSession();
+
+        List<Product> productList = new ArrayList<>();
+        productList = session.createQuery("FROM pl.edu.wszib.model.Product").list();
+
+        session.close();
+        return productList;
+    }
+
     @Override
-    public void updateProduct(Product product) {
+    public void deleteProduct(Product product) {
         Session session = factory.openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            session.update(product);
+            session.delete(product);
             //wiecej operacji
             tx.commit();
         } catch (HibernateException e) {

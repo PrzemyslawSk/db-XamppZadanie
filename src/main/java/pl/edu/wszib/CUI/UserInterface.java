@@ -6,6 +6,7 @@ import pl.edu.wszib.dao.IProductDAO;
 import pl.edu.wszib.model.Product;
 import pl.edu.wszib.services.IProductService;
 
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -30,11 +31,10 @@ public class UserInterface
         {
             //  Show product list.
             case "1":
-                int i = 1;
-                while(productDAO.getProductById(i) != null)
-                {
-                    System.out.println(productDAO.getProductById(i));
-                    i++;
+                List<Product> productList = productDAO.getAllProducts();
+                System.out.println("=== LIST OF PRODUCTS ===");
+                for(Product tempProduct : productList) {
+                    System.out.println(tempProduct);
                 }
                 break;
             //  Add product.
@@ -62,7 +62,7 @@ public class UserInterface
                     Product product1 = new Product();
                     System.out.println("Which product do you want to delete?");
                     product1.setProductID(scanner.nextInt());
-                    productDAO.updateProduct(product1);
+                    productDAO.deleteProduct(product1);
                 }catch (java.util.InputMismatchException e)
                 {
                     System.out.println("Something went wrong: " + e.toString());
