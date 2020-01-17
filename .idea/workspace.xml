@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4e94fc1-180e-426c-aaa1-37bc9e70093e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/CUI/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/CUI/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/dao/IProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/dao/IProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/dao/impl/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/dao/impl/ProductDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/db/DBConnector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/db-ProductsProject.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/db-products.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/hibernate.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/CUI/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/CUI/UserInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/dao/IProductDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/dao/IProductDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/dao/impl/ProductDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/dao/impl/ProductDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/db/DBConnector.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,17 +71,41 @@
       <option name="presentableId" value="Default" />
       <updated>1573857459394</updated>
     </task>
+    <task id="LOCAL-00001" summary="Exercise 2 - Hibernate Update v2">
+      <created>1577724813091</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577724813091</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Exercise 2 - Hibernate Update v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exercise 2 - Hibernate Update v2" />
   </component>
 </project>
